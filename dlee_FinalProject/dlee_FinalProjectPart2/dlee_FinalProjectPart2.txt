@@ -1,0 +1,142 @@
+mysql> source /Users/dereklee/Desktop/mysql_scripts/dlee_FinalProjectPart2.sql
+Empty set (0.00 sec)
+
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+/*Query 1: Display all course sections offered in Winter 2017. 
+Returns these columns: course_id, section_id, and term_id.*/
+
++-----------+------------+---------+
+| course_id | section_id | term_id |
++-----------+------------+---------+
+| AC265     | 1101       | WN17    |
+| CIS253    | 1102       | WN17    |
+| MA150     | 1103       | WN17    |
++-----------+------------+---------+
+3 rows in set (0.00 sec)
+
+/*Query 2: Modifies the title of course, CIS253 from Database Systems 
+to Introduction to Relational Databases.*/
+
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+/*Query 3: Displays the number of enrollments for section 1103 of Course ID MA150. 
+Returns these columns: section_id, course_id and the number of enrollments.*/
+
++------------+-----------+-----------------+
+| section_id | course_id | num_enrollments |
++------------+-----------+-----------------+
+| 1103       | MA150     |               1 |
++------------+-----------+-----------------+
+1 row in set (0.00 sec)
+
+/*Query 4: Display the student roster (use the format: <last name>, <first name> in a single column) 
+for each section taught by Professor Sen. 
+Identify the section using course ID and section ID. 
+Returns these columns: course_id , section_id , last_name, and first_name.*/
+
++-----------+------------+---------------+
+| course_id | section_id | whole_name    |
++-----------+------------+---------------+
+| AC101     | 1104       | Rickles, Alex |
+| AC101     | 1104       | Diaz, Jose    |
++-----------+------------+---------------+
+2 rows in set (0.00 sec)
+
+/*Query 5: Displays a list of all departments, with the total number of 
+instructors in each department, without using subqueries. 
+Returns these columns: dept_name and the total number of instructors.*/
+
++--------------------+-------------------+
+| dept_name          | total_instructors |
++--------------------+-------------------+
+| Accounting         |                 2 |
+| Computer Science   |                 2 |
+| English            |                 1 |
+| Liberal Arts       |                 1 |
+| Math and Science   |                 1 |
+| Telecommunications |                 2 |
++--------------------+-------------------+
+6 rows in set (0.00 sec)
+
+/*Query 6: Displays names of faculty members who work in department 4 or 5. 
+This statement should return these columns: faculty_id, name, and department_id.*/
+
++------------+--------+---------+
+| faculty_id | name   | dept_id |
++------------+--------+---------+
+| 35579      | Chang  | 5       |
+| 74420      | Rivera | 4       |
++------------+--------+---------+
+2 rows in set (0.00 sec)
+
+/*Query 7: Displays Winter 2017 course sections with the faculty member 
+assigned to teach the class. Returns these columns: course_id, section_id, and name.*/
+
++-----------+------------+---------+
+| course_id | section_id | name    |
++-----------+------------+---------+
+| AC265     | 1101       | Collins |
+| CIS253    | 1102       | Mobley  |
+| MA150     | 1103       | Rivera  |
++-----------+------------+---------+
+3 rows in set (0.00 sec)
+
+/*Query 8: Displays names of students, who received an ‘A’ as their final grade in Winter 2017.*/
+
++---------------+-------------+
+| Student       | final_grade |
++---------------+-------------+
+| Rajesh Miliko | A           |
++---------------+-------------+
+1 row in set (0.00 sec)
+
+/*Query 9: Displays the total enrollment for course CIS253 in a column named TOTAL ENROLLED.*/
++----------------+
+| Total_Enrolled |
++----------------+
+|              6 |
++----------------+
+1 row in set (0.00 sec)
+
+/*Query 10: Displays course title, total capacity and number of sections 
+in each course, where there is more than one section.*/
+
++--------------------------------------+----------------+--------------+
+| title                                | total_capacity | num_sections |
++--------------------------------------+----------------+--------------+
+| Introduction to Relational Databases |            165 |            4 |
+| Systems Analysis                     |             95 |            3 |
++--------------------------------------+----------------+--------------+
+2 rows in set (0.00 sec)
+
+/*Query 11: Creates a view that lists all course sections offered 
+by the Accounting department in Winter 2017.*/
+
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+/*Query 12: Shows all the sections whose registration is greater than two students.
+Returns these columns: course_id, section_id, and the number of enrollments.*/
+
++------------+
+| section_id |
++------------+
+| 1101       |
++------------+
+1 row in set (0.01 sec)
+
++------------+-----------+--------------------+
+| section_id | course_id | number_enrollments |
++------------+-----------+--------------------+
+| 1206       | AC265     |                  3 |
+| 1207       | LA123     |                  3 |
++------------+-----------+--------------------+
+2 rows in set (0.00 sec)
+
+mysql> notee
